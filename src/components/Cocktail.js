@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 const Cocktail = ({ id, name, image, info, glass }) => {
-  console.log(name, image, glass);
+  //console.log(name, image, glass);
 
 
   return (
