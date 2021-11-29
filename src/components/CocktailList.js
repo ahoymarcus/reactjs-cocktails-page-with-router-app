@@ -8,6 +8,16 @@ import { useGlobalContext } from '../context';
 
 const CocktailList = () => {
   const { cocktails, loading } = useGlobalContext();
+  console.log(loading);
+
+
+  
+  if (loading) {
+    return <Loading />
+  }
+  if (cocktails.length < 1) {
+    return <h2 className="section-title">no cocktails matched you search criteria</h2>
+  }
 
   return (
     <div>
