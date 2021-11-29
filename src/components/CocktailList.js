@@ -8,7 +8,7 @@ import { useGlobalContext } from '../context';
 
 const CocktailList = () => {
   const { cocktails, loading } = useGlobalContext();
-  console.log(loading);
+  //console.log(cocktails);
 
 
   
