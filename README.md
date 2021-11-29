@@ -31,6 +31,34 @@ Conjunto de projetos de frontend inspirados na apresentação do professor **Joh
 ![Imagem da funcionalidade acrescida de Aniversariantes do Dia](/public/images/aniversariantes-do-dia.png)
 
 <br />
+
+Abaixo temos o detalhe básico do código que estrutura o site com 03 rotas para páginas (Home, About e Single-Coctail), mais uma rota especial para tratamento de errors:
+
+<br />
+
+```
+<Router>
+    <Navbar />
+        <Switch>
+            <Route exact path="/">
+                <Home />
+            </Route>
+            <Route path="/about">
+                <About />
+            </Route>
+            <Route path="/cocktail/:id">
+                <SingleCocktail />
+            </Route>
+            <Route path="*">
+                <Error />
+            </Route>
+        </Switch>
+    </Router>
+```
+
+<br />
+
+<br />
 <br />
 
 [^1] John Smilga - Freecodecamp.org.
