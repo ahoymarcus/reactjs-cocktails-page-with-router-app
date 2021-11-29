@@ -15,7 +15,11 @@ const AppProvider = ({ children }) => {
   const [ cocktails, setCocktails ] = useState([]);
 
 
-  const fetchDrinks = async () => {
+  /* 
+    ATENÇÃO: o React dá aviso no console para que se acrescente fetchDrinks() como dependência ao array que useEffect monitora.
+    Porém, neste caso gerará Looping Infinito se a função não for envelopada por UseCallback......... 
+  */
+  const fetchDrinks = useCallback(async () => {
     setLoading(true);
 
     try {
@@ -54,12 +58,12 @@ const AppProvider = ({ children }) => {
       console.log(error);
       setLoading(false);
     }
-  };
+  }, [searchTerm]);
 
 
   useEffect(() => {
     fetchDrinks();
-  }, [searchTerm]);
+  }, [searchTerm, fetchDrinks]);
 
 
 

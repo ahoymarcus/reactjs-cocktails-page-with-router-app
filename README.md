@@ -20,17 +20,99 @@ Conjunto de projetos de frontend inspirados na apresentação do professor **Joh
 
 <br />
 
-### Imagem do card com Lista de Contatos:
+### Imagem da página Home do Cocktails App:
 
-![Imagem do card com Lista de Contatos](/public/images/lista-de-contatos.png)
+![Imagem da página Home do Cocktails App](/public/images/reactjs-cocktails-with-router-app-01.png)
+
+<br />
+
+### Imagem da pagina /about construída com o pacote React-router-dom:
+
+![Imagem da pagina /about construída com o pacote React-router-dom](/public/images/reactjs-cocktails-with-router-app-02.png)
 
 <br />
 
-### Imagem da funcionalidade acrescida de Aniversariantes do Dia:
+### Imagem do sistema de busca feito na API de dados:
 
-![Imagem da funcionalidade acrescida de Aniversariantes do Dia](/public/images/aniversariantes-do-dia.png)
+![Imagem do sistema de busca feito na API de dados](/public/images/reactjs-cocktails-with-router-app-03.png)
 
 <br />
+
+### Imagem da pagina /cocktail/:id construída com o pacote React-router-dom:
+
+![Imagem da pagina /cocktail/:id construída com o pacote React-router-dom](/public/images/reactjs-cocktails-with-router-app-04.png)
+
+
+<br />
+
+### Imagem da pagina de erro construída com o pacote React-router-dom:
+
+![Imagem da pagina de erro construída com o pacote React-router-dom](/public/images/reactjs-cocktails-with-router-app-05.png)
+
+
+<br />
+
+### Imagem do **warning** do React com relação à chamada da requisição da API em um hook useEffect:
+
+![Imagem do **warning** do React com relação à chamada da requisição da API](/public/images/lidar com o Warning para Fetch no projeto React.png)
+
+<br />
+
+O problema foi sanado envelopando a função de fecth dos dados em um useCallback, porque a inserção da função diretamente no Array de Depenência do useEffect responsável por chamar a função criaria um loop infinito:
+
+<br />
+
+```
+const fetchDrinks = useCallback(async () => {
+    setLoading(true);
+
+    try {
+      const response = await fetch(`${url}${searchTerm}`);
+      const data = await response.json();
+
+      console.log(data);
+      const { drinks } = data;
+
+      if (drinks) {
+        const newCocktails = drinks.map((drink) => {
+          const { 
+            idDrink,
+            strDrink,
+            strDrinkThumb,
+            strAlcoholic,
+            strGlass
+          } = drink;
+
+          return {
+            id: idDrink,
+            name: strDrink,
+            image: strDrinkThumb,
+            info: strAlcoholic,
+            glass: strGlass,
+          };
+        });
+
+        setCocktails(newCocktails);
+      } else {
+        setCocktails([]); 
+      } 
+
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+    }
+  }, [searchTerm]);
+
+
+  useEffect(() => {
+    fetchDrinks();
+  }, [searchTerm, fetchDrinks]);
+```
+
+
+<br />
+
 
 Abaixo temos o detalhe básico do código que estrutura o site com 03 rotas para páginas (Home, About e Single-Coctail), mais uma rota especial para tratamento de errors, montado com a biblioteca React-router-dom:
 
