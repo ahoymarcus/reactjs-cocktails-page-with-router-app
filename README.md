@@ -32,11 +32,15 @@ Conjunto de projetos de frontend inspirados na apresentação do professor **Joh
 
 <br />
 
-Abaixo temos o detalhe básico do código que estrutura o site com 03 rotas para páginas (Home, About e Single-Coctail), mais uma rota especial para tratamento de errors:
+Abaixo temos o detalhe básico do código que estrutura o site com 03 rotas para páginas (Home, About e Single-Coctail), mais uma rota especial para tratamento de errors, montado com a biblioteca React-router-dom:
 
 <br />
 
 ```
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+...outros códigos
+
 <Router>
     <Navbar />
         <Switch>
@@ -54,6 +58,38 @@ Abaixo temos o detalhe básico do código que estrutura o site com 03 rotas para
             </Route>
         </Switch>
     </Router>
+```
+
+<br />
+
+Agora nós vemos abaixo como funciona o sistema de roteamento da biblioteca React-router-dom com o uso de Links:
+
+<br />
+
+```
+import { Link } from 'react-router-dom';
+
+...outros códigos
+
+<nav className="navbar">
+    <div className="nav-center">
+    <Link to="/">
+        <img src={logo} alt="cocktail db logo" className="logo" />
+    </Link>
+    <ul className="nav-links">
+        <li>
+        <Link to="/">
+            Home
+        </Link>
+        </li>
+        <li>
+        <Link to="/about">
+            About
+        </Link>
+        </li>
+    </ul>
+    </div>
+</nav>
 ```
 
 <br />
