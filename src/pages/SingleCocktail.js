@@ -14,6 +14,9 @@ const SingleCocktail = () => {
   const [ cocktail, setCocktail ] = React.useState(null);
 
 
+  /* 
+    Fetch exclusivo para uso na renderização desta página de detalhes de cada cocktail.
+  */
   React.useEffect(() => {
     setLoading(true);
 

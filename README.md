@@ -54,7 +54,7 @@ Conjunto de projetos de frontend inspirados na apresentação do professor **Joh
 
 ### Imagem do **warning** do React com relação à chamada da requisição da API em um hook useEffect:
 
-![Imagem do **warning** do React com relação à chamada da requisição da API](/public/images/lidar com o Warning para Fetch no projeto React.png)
+![Imagem do **warning** do React com relação à chamada da requisição da API](/public/images/lidar-com-o-warning-para-fetch-no-projeto-react.png)
 
 <br />
 
