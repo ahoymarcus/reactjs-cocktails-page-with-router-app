@@ -263,7 +263,7 @@ Cocktail
   font-size: 2rem;
 }
 .cocktail-footer p {
-  color: var(--darkGrey);
+  color: #3e420d; /*var(--darkGrey);*/
   margin-bottom: 0.5rem;
 }
 /* 
@@ -298,7 +298,7 @@ Form
   width: 100%;
   border: none;
   border-color: transparent;
-  background: var(--mainBackground);
+  background: #c6cd7391; /*var(--mainBackground);*/
   border-radius: var(--mainBorderRadius);
   padding: 0.5rem;
   font-size: 1.2rem;
