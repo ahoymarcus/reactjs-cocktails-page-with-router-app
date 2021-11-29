@@ -1,5 +1,5 @@
 // https://www.youtube.com/watch?v=ly3m6mv5qvg
-// 7 hr 45' 10 ''
+// 7 hr 56' 10 ''
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -15,7 +15,6 @@ import Navbar from './components/Navbar';
 
 
 function App() {
-
 
 
   return (
